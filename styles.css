@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body {
+    font-size: 17px;
+}
+
+.navbar-brand {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 3%
+}
+
+/* Highlight the active page */
+.navbar-nav li>a:hover,
+.navbar-nav li>a:focus,
+.navbar-nav li>a.active {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* For screen sizes lower than 768px(sm), the popovers will be hidden */
+.popover__content {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+}
+
+/* Font-size of the cards */
+.card-header,
+.card-text {
+    font-size: 1.1rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+}
+
+/* Break Line Style */
+.mainHr {
+    width: 70%;
+    margin: 0em auto 1.5em auto;
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.navbar-nav li {
+    position: relative;
+    display: inline-block;
+}
+
+/* Popovers' settings*/
+.popover__content {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    left: -150px;
+    transform: translate(76px, 35px);
+    background-color: rgb(255, 255, 255);
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    width: auto;
+}
+
+#homePopover {
+    transform: translate(99px, 35px);
+}
+
+.navbar-nav li:hover #homePopover {
+    transform: translate(85px, 5px);
+}
+
+#createPopover {
+    transform: translate(115px, 3px);
+}
+
+.navbar-nav li:hover #createPopover {
+    transform: translate(115px, 5px);
+}
+
+#loginPopover {
+    transform: translate(76px, 35px);
+}
+
+.navbar-nav li:hover #loginPopover {
+    transform: translate(76px, 5px);
+}
+
+#depositPopover {
+    transform: translate(90px, 35px);
+}
+
+.navbar-nav li:hover #depositPopover {
+    transform: translate(90px, 5px);
+}
+
+#withdrawPopover {
+    transform: translate(75px, 35px);
+}
+
+.navbar-nav li:hover #withdrawPopover {
+    transform: translate(75px, 5px);
+}
+
+#dataPopover {
+    transform: translate(-3px, 35px);
+}
+
+.navbar-nav li:hover #dataPopover {
+    transform: translate(-3px, 5px);
+}
+
+#dataPopover:before {
+    right: calc(17% - 10px);
+}
+
+.popover__content:before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    right: calc(50% - 10px);
+    top: -8px;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent rgb(255, 255, 255) transparent;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.navbar-nav li:hover .popover__content {
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(76px, 5px);
+    transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+}
+
+.popover__message {
+    text-align: center;
+    margin: 0;
+    color: rgb(0, 0, 0);
+}
+
+
+/* Containers, mid-containers(right and left), and subcontainers(card) styles*/
+.container-big {
+    height: calc(100vh - 57px);
+    position: relative;
+    z-index: 2;
+}
+
+.container-left {
+    background-color: white;
+    width: 50%;
+    height: 100%;
+    float: left;
+    position: relative;
+    /*position: absolute;*/
+}
+
+.subcontainer {
+    height: calc(100vh - 57px);
+    width: 100%;
+}
+
+.col {
+    z-index: 1;
+}
+
+.container-right {
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url('./img/bank.webp') center/cover no-repeat;
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+#container-right01 {
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url('./img/form.jpg') center/cover no-repeat;
+}
+
+#container-right02 {
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url('./img/form1.jpg') center/cover no-repeat;
+}
+
+#container-right03 {
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url('./img/deposit.webp') center/cover no-repeat;
+}
+
+#container-right04 {
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url('./img/withdraw.jpg') center/cover no-repeat;
+}
+
+
+/* For screen sizes until 992px(until md) */
+@media screen and (max-width:992px) {
+
+    /* Containers, mid-containers(only left visible), and subcontainers(card) styles*/
+    .container-big {
+        height: calc(100vh - 68px);
+    }
+
+    .container-left {
+        width: 100%;
+        height: 100%;
+    }
+
+    .subcontainer {
+        height: calc(100vh - 68px);
+    }
+
+    .container-right {
+        display: none;
+    }
+}
+
+
+/* Hide the popovers in screen sizes lower than 768px */
+@media screen and (max-width:768px) {
+    .popover__content {
+        display: none;
+    }
+}
